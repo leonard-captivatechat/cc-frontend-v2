@@ -1,0 +1,22 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Installing pnpm globally"
+        - node -v
+        - npm install -g pnpm
+        - echo "Installing project dependencies with pnpm"
+        - pnpm install
+    build:
+      commands:
+        - echo "Building the project"
+        - node -v
+        - pnpm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
