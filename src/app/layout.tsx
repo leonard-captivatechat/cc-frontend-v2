@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
+import { Montserrat as FontSans } from 'next/font/google'
+
+import { cn } from '@/lib/utils'
 import './globals.css'
 
-const montserrat = Montserrat({ subsets: ['latin'] })
+export const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
 
 export const metadata: Metadata = {
   title: 'Captivate Chat',
@@ -15,7 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          fontSans.variable,
+        )}
+      >
+        {children}
+      </body>
     </html>
   )
 }
