@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { FaRegEye } from 'react-icons/fa6'
+import { FaRegEyeSlash } from 'react-icons/fa6'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -67,7 +69,11 @@ export default function Login() {
                       className="absolute right-3 top-4"
                       onClick={() => setShowPassword((prev) => !prev)}
                     >
-                      {showPassword ? 'Hide' : 'Show'}
+                      {showPassword ? (
+                        <FaRegEyeSlash size={24} color="#AEAEAE" />
+                      ) : (
+                        <FaRegEye size={24} color="#AEAEAE" />
+                      )}
                     </button>
                   </div>
                 </FormControl>
