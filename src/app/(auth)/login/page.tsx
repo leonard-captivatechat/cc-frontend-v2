@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -24,6 +25,7 @@ export default function Login() {
       password: '',
     },
   })
+  const [showPassword, setShowPassword] = useState(false)
 
   const onSubmit = (values: FormData) => {
     console.log(values)
@@ -54,7 +56,20 @@ export default function Login() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input type="password" className="h-14" {...field} />
+                  <div className="relative">
+                    <Input
+                      type={showPassword ? 'text' : 'password'}
+                      className="h-14"
+                      {...field}
+                    />
+                    <button
+                      type="button"
+                      className="absolute right-3 top-4"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                    >
+                      {showPassword ? 'Hide' : 'Show'}
+                    </button>
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
