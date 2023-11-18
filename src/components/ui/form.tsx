@@ -14,6 +14,7 @@ import {
 
 import { cn } from '@/lib/utils'
 import { Label } from '@/components/ui/label'
+import { Skeleton } from '@/components/ui/skeleton'
 
 const Form = FormProvider
 
@@ -86,7 +87,7 @@ const FormItem = React.forwardRef<
 
   // Render the component only on the client-side
   if (!isClient) {
-    return null
+    return <Skeleton className="h-14 w-full" />
   }
 
   return (
