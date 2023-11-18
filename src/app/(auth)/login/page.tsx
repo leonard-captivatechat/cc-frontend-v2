@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
@@ -16,7 +17,6 @@ import { Input } from '@/components/ui/input'
 import { loginSchema, FormData } from './schema'
 
 export default function Login() {
-  // 1. Define your form.
   const form = useForm<FormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -25,16 +25,13 @@ export default function Login() {
     },
   })
 
-  // 2. Define a submit handler.
-  function onSubmit(values: FormData) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+  const onSubmit = (values: FormData) => {
     console.log(values)
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
         <p className="text-2xl font-semibold">Login to your account</p>
         <div className="space-y-4">
           <FormField
@@ -75,9 +72,19 @@ export default function Login() {
             Microsoft
           </Button>
         </div>
+        <div className="flex items-center justify-center space-x-3">
+          <div className="h-px w-1/2 bg-black/50" />
+          <div className="text-sm font-medium uppercase">or</div>
+          <div className="h-px w-1/2 bg-black/50" />
+        </div>
         <Button type="submit" className="h-14 w-full shadow-md shadow-black/25">
           Continue
         </Button>
+        <div>
+          <Link href="/forgot-password" className="text-sm font-medium">
+            Forgot Password
+          </Link>
+        </div>
       </form>
     </Form>
   )
