@@ -6,6 +6,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { FaRegEye } from 'react-icons/fa6'
 import { FaRegEyeSlash } from 'react-icons/fa6'
+import { FcGoogle } from 'react-icons/fc'
+import { FaFacebookF } from 'react-icons/fa6'
+import { FaMicrosoft } from 'react-icons/fa6'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -92,13 +95,28 @@ export default function Login() {
           <div className="h-px w-1/2 bg-black/50" />
         </div>
         <div className="flex space-x-2">
-          <Button type="button" variant="outline" className="h-14 w-full">
+          <Button
+            type="button"
+            variant="outline"
+            className="flex h-14 w-full gap-3 text-xs"
+          >
+            <FcGoogle size="18" />
             Google
           </Button>
-          <Button type="button" variant="outline" className="h-14 w-full">
+          <Button
+            type="button"
+            variant="outline"
+            className="flex h-14 w-full gap-3 text-xs"
+          >
+            <FaFacebookF size="18" color="#0037C1" />
             Facebook
           </Button>
-          <Button type="button" variant="outline" className="h-14 w-full">
+          <Button
+            type="button"
+            variant="outline"
+            className="flex h-14 w-full gap-3 text-xs"
+          >
+            <FaMicrosoft size="18" color="#00A4EF" />
             Microsoft
           </Button>
         </div>
