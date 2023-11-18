@@ -37,13 +37,15 @@ export default function Login() {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
         <p className="text-2xl font-semibold">Login to your account</p>
-        <div className="space-y-4">
+        <div className="space-y-6">
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel>Work Email</FormLabel>
+              <FormItem className="relative">
+                <FormLabel className="absolute -top-2 left-4 bg-background px-2 font-medium">
+                  Work Email
+                </FormLabel>
                 <FormControl>
                   <Input type="email" className="h-14" {...field} />
                 </FormControl>
@@ -55,8 +57,10 @@ export default function Login() {
             control={form.control}
             name="password"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
+              <FormItem className="relative">
+                <FormLabel className="absolute -top-2 left-4 z-[1] bg-background px-2 font-medium">
+                  Password
+                </FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Input
@@ -82,6 +86,11 @@ export default function Login() {
             )}
           />
         </div>
+        <div className="flex items-center justify-center space-x-3">
+          <div className="h-px w-1/2 bg-black/50" />
+          <div className="text-sm font-medium uppercase">or</div>
+          <div className="h-px w-1/2 bg-black/50" />
+        </div>
         <div className="flex space-x-2">
           <Button type="button" variant="outline" className="h-14 w-full">
             Google
@@ -92,11 +101,6 @@ export default function Login() {
           <Button type="button" variant="outline" className="h-14 w-full">
             Microsoft
           </Button>
-        </div>
-        <div className="flex items-center justify-center space-x-3">
-          <div className="h-px w-1/2 bg-black/50" />
-          <div className="text-sm font-medium uppercase">or</div>
-          <div className="h-px w-1/2 bg-black/50" />
         </div>
         <Button type="submit" className="h-14 w-full shadow-md shadow-black/25">
           Continue
