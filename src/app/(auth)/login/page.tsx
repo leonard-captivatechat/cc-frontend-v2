@@ -107,7 +107,7 @@ export default function Login() {
         </Button>
         <div>
           <Link href="/forgot-password" className="text-sm font-medium">
-            Forgot Password
+            Forgot Password?
           </Link>
         </div>
       </form>
