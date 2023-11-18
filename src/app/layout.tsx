@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { Montserrat as FontSans } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
@@ -8,10 +9,6 @@ export const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
 })
-
-export const metadata: Metadata = {
-  title: 'Captivate Chat',
-}
 
 export default function RootLayout({
   children,
