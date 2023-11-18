@@ -155,7 +155,7 @@ export default function Register() {
           </Button>
         </div>
         <p className="text-xs">
-          By signing up, you agree to Captivate’s{' '}
+          By signing up, you agree to Captivate&apos;s{' '}
           <Link href="#" className="font-bold underline">
             terms of service
           </Link>{' '}
