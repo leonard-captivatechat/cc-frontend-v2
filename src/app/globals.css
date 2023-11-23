@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  /* Uncomment this test colors of css variables */
+  /* .test {
+    color: hsl(0, 0%, 98%)
+  } */
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -27,6 +31,9 @@
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+
+    --secondary-dark: 200 51% 15%;
+    --secondary-dark-foreground: 0 0% 98%;
 
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
