@@ -4,9 +4,9 @@
 
 @layer base {
   /* Uncomment this test colors of css variables */
-  /* .test {
-    color: hsl(0, 0%, 98%)
-  } */
+  .test {
+    color: hsl(0, 0%, 98%);
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
